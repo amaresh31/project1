@@ -1,0 +1,58 @@
+r in parent:{{r}}
+s in parent:{{s}}<br><br>
+w in parent:{{Wparent}}
+q in parent:{{qparent}}
+
+this is service:{{addd}}
+
+<p [hidden]='show'>this is amaresh</p><br>
+<button (click)="display()">show/hide</button>
+
+<app-child [rchild]="r" [schild]="s" (Wevent)="getW($event)" (qevent)="getq($event)"></app-child>
+
+<br><br>
+{{x}}
+<button (click)="myfunction()">clickme</button>
+<input [(ngModel)]="y" />
+
+{{y}}
+<p [ngClass]="myclass" >my name is sankxana</p>
+<p [ngStyle]="mystyle">style style style</p>
+{{emp1.name|json}}
+{{emp2?.name}}
+<div *ngIf="a">this is true</div>
+<div *ngIf="w%2==0;then even;else odd">
+</div>    
+<div>
+        <ng-template #even>
+                {{w}}this is odd
+        </ng-template>
+<ng-template #odd>
+    {{w}}this is odd
+</ng-template>
+</div>
+<table border="5">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>add</th>
+            <th>button</th>
+        </tr>
+        <tr *ngFor="let emp of employee;let i = index">
+            <td>{{emp.name | gender:emp}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.add}}</td>
+            <td>{{emp.gender}}</td>
+            <td><button type="button" (click)="view(i)">view</button></td>
+            <td><button type="button" (click)="edit(i)">edit</button></td>
+            <td><button type="button" (click)="delete(i )">delete</button></td>
+        </tr>
+    </table>
+<table>
+    <tr>
+        <td>name</td>
+    </tr>
+</table>
+<textarea [(ngModel)]="comment"></textarea>
+remaining charcter:{{comment|remaining}}
+<router-outlet></router-outlet>
